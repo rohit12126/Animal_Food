@@ -46,10 +46,6 @@ jQuery(document).ready(function(){
 		jQuery(".variations_form.cart").find(".error span").remove();
 		var _this = jQuery(".variations_form.cart").find('input[name="quantity"]');
 		var select = jQuery('.variations_form.cart').find('.variations select').val();
-		//alert(select);
-		if(select == ''){
-
-		}
 		var val_arr = select.split('-to-');
 		var min = parseInt((val_arr[0].replace('kg','')).trim());
 		var max = parseInt((val_arr[1].replace('kg','')).trim());
@@ -66,9 +62,9 @@ jQuery(document).ready(function(){
 			var maxV = max;
 			var minV = min;
 		}
-		if(jQuery(_this).val()<= '0'){
+		if(jQuery(_this).val()<= '0')
 			jQuery(_this).val('1');
-		}else if(jQuery(_this).val() > maxV){
+		else if(jQuery(_this).val() > maxV){
 			selectVariation(_this.val());
 		}else if(jQuery(_this).val() < minV){
 			//alert("select other variation.");
