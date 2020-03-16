@@ -1,0 +1,30 @@
+2020-03-13T06:20:57+00:00 CRITICAL Object of class WP_Post could not be converted to string in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\header.php on line 163
+
+2020-03-13T06:42:43+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_the_terms(), 0 passed in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\taxonomy-blog_category.php on line 5 and exactly 2 expected in H:\wamp\www\rishabh\animal_food\wp-includes\category-template.php:1230
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\taxonomy-blog_category.php(5): get_the_terms()
+#1 H:\wamp\www\rishabh\animal_food\wp-includes\template-loader.php(98): include('H:\\wamp\\www\\ris...')
+#2 H:\wamp\www\rishabh\animal_food\wp-blog-header.php(19): require_once('H:\\wamp\\www\\ris...')
+#3 H:\wamp\www\rishabh\animal_food\index.php(17): require('H:\\wamp\\www\\ris...')
+#4 {main}
+  thrown in H:\wamp\www\rishabh\animal_food\wp-includes\category-template.php on line 1230
+
+2020-03-13T06:43:07+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_the_terms(), 1 passed in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\taxonomy-blog_category.php on line 5 and exactly 2 expected in H:\wamp\www\rishabh\animal_food\wp-includes\category-template.php:1230
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\taxonomy-blog_category.php(5): get_the_terms('blog_category')
+#1 H:\wamp\www\rishabh\animal_food\wp-includes\template-loader.php(98): include('H:\\wamp\\www\\ris...')
+#2 H:\wamp\www\rishabh\animal_food\wp-blog-header.php(19): require_once('H:\\wamp\\www\\ris...')
+#3 H:\wamp\www\rishabh\animal_food\index.php(17): require('H:\\wamp\\www\\ris...')
+#4 {main}
+  thrown in H:\wamp\www\rishabh\animal_food\wp-includes\category-template.php on line 1230
+
+2020-03-13T13:18:41+00:00 CRITICAL Cannot redeclare register_weight_based_shipping_page() (previously declared in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php:64) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 660
+
+2020-03-13T13:18:47+00:00 CRITICAL Cannot redeclare register_weight_based_shipping_page() (previously declared in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php:64) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 660
+
+2020-03-13T13:19:03+00:00 CRITICAL Cannot redeclare register_weight_based_shipping_page() (previously declared in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php:64) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 660
+
+2020-03-13T13:19:06+00:00 CRITICAL Cannot redeclare register_weight_based_shipping_page() (previously declared in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php:64) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 660
+
+2020-03-13T13:20:03+00:00 CRITICAL Cannot redeclare register_weight_based_shipping_page() (previously declared in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php:64) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 660
+

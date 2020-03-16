@@ -1,0 +1,55 @@
+2020-03-05T06:21:47+00:00 CRITICAL syntax error, unexpected '''' (T_CONSTANT_ENCAPSED_STRING) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 144
+
+2020-03-05T06:21:52+00:00 CRITICAL syntax error, unexpected '''' (T_CONSTANT_ENCAPSED_STRING) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 144
+
+2020-03-05T07:22:52+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 178
+
+2020-03-05T07:22:53+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 178
+
+2020-03-05T07:23:53+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 178
+
+2020-03-05T07:25:53+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 178
+
+2020-03-05T07:27:04+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 178
+
+2020-03-05T07:28:05+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 178
+
+2020-03-05T07:29:45+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 178
+
+2020-03-05T07:30:18+00:00 CRITICAL syntax error, unexpected ';' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 176
+
+2020-03-05T07:30:45+00:00 CRITICAL syntax error, unexpected ';' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 176
+
+2020-03-05T07:30:47+00:00 CRITICAL syntax error, unexpected ';' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 176
+
+2020-03-05T07:30:58+00:00 CRITICAL syntax error, unexpected ';' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 176
+
+2020-03-05T07:31:31+00:00 CRITICAL Uncaught Error: Call to a member function get_results() on null in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php:192
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php(175): get_zone_name(NULL)
+#1 H:\wamp\www\rishabh\animal_food\wp-includes\class-wp-hook.php(288): add_new_shipping_rule('')
+#2 H:\wamp\www\rishabh\animal_food\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters('', Array)
+#3 H:\wamp\www\rishabh\animal_food\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#4 H:\wamp\www\rishabh\animal_food\wp-admin\admin-ajax.php(175): do_action('wp_ajax_add_new...')
+#5 {main}
+  thrown in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 192
+
+2020-03-05T07:33:13+00:00 CRITICAL Uncaught Error: Call to a member function get_results() on null in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php:193
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php(175): get_zone_name('1')
+#1 H:\wamp\www\rishabh\animal_food\wp-includes\class-wp-hook.php(288): add_new_shipping_rule('')
+#2 H:\wamp\www\rishabh\animal_food\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters('', Array)
+#3 H:\wamp\www\rishabh\animal_food\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#4 H:\wamp\www\rishabh\animal_food\wp-admin\admin-ajax.php(175): do_action('wp_ajax_add_new...')
+#5 {main}
+  thrown in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 193
+
+2020-03-05T14:03:37+00:00 CRITICAL Uncaught Exception: No captions.css found! This installation is incorrect, please make sure to reupload the Slider Revolution plugin and try again! in H:\wamp\www\rishabh\animal_food\wp-content\plugins\revslider\includes\framework\functions.class.php:16
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-content\plugins\revslider\includes\operations.class.php(1185): RevSliderFunctions::throwError('No captions.css...')
+#1 H:\wamp\www\rishabh\animal_food\wp-content\plugins\revslider\includes\operations.class.php(1198): RevSliderOperations::getCaptionsCssContentArray()
+#2 H:\wamp\www\rishabh\animal_food\wp-content\plugins\revslider\public\revslider-front.class.php(477): RevSliderOperations::importCaptionsCssContentArray()
+#3 H:\wamp\www\rishabh\animal_food\wp-content\plugins\revslider\public\revslider-front.class.php(216): RevSliderFront::createTable('revslider_css')
+#4 H:\wamp\www\rishabh\animal_food\wp-content\plugins\revslider\admin\revslider-admin.class.php(649): RevSliderFront::createDBTables()
+#5 H:\wamp\ww in H:\wamp\www\rishabh\animal_food\wp-content\plugins\revslider\includes\framework\functions.class.php on line 16
+

@@ -1,0 +1,14 @@
+2020-03-09T05:56:36+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 47
+
+2020-03-09T05:56:40+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 47
+
+2020-03-09T07:13:28+00:00 CRITICAL syntax error, unexpected '$image' (T_VARIABLE) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 352
+
+2020-03-09T09:20:41+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\header-shop.php on line 183
+
+2020-03-09T09:53:37+00:00 CRITICAL syntax error, unexpected '.' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\header-shop.php on line 172
+
+2020-03-09T11:03:56+00:00 CRITICAL syntax error, unexpected ';', expecting ',' or ')' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\content-product.php on line 72
+
+2020-03-09T11:07:43+00:00 CRITICAL syntax error, unexpected '$add_to_cart' (T_VARIABLE) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\content-product.php on line 97
+

@@ -1,0 +1,57 @@
+2020-03-11T06:29:37+00:00 CRITICAL syntax error, unexpected '$average' (T_VARIABLE) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\single-product\rating.php on line 44
+
+2020-03-11T09:09:47+00:00 CRITICAL Uncaught Error: Call to a member function has_weight() on string in H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\includes\wc-template-functions.php:3317
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-includes\class-wp-hook.php(288): wc_display_product_attributes('aliquam-ferment...')
+#1 H:\wamp\www\rishabh\animal_food\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters('', Array)
+#2 H:\wamp\www\rishabh\animal_food\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\content-single-product.php(147): do_action('woocommerce_pro...', 'aliquam-ferment...')
+#4 H:\wamp\www\rishabh\animal_food\wp-includes\template.php(724): require('H:\\wamp\\www\\ris...')
+#5 H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('H:\\wamp\\www\\ris...', false)
+#6 H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\templates\single-product.php(36): wc_get_t in H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 3317
+
+2020-03-11T09:57:49+00:00 CRITICAL syntax error, unexpected '}' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\single-product-reviews.php on line 53
+
+2020-03-11T09:57:56+00:00 CRITICAL syntax error, unexpected '}' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\single-product-reviews.php on line 53
+
+2020-03-11T09:58:13+00:00 CRITICAL syntax error, unexpected '}' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\single-product-reviews.php on line 53
+
+2020-03-11T09:58:22+00:00 CRITICAL syntax error, unexpected '}' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\single-product-reviews.php on line 52
+
+2020-03-11T10:01:51+00:00 CRITICAL Object of class WP_Comment could not be converted to string in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\single-product-reviews.php on line 36
+
+2020-03-11T10:06:46+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_comment_meta(), 0 passed in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\single-product-reviews.php on line 38 and at least 1 expected in H:\wamp\www\rishabh\animal_food\wp-includes\comment.php:491
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\single-product-reviews.php(38): get_comment_meta()
+#1 H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\includes\wc-core-functions.php(249): include('H:\\wamp\\www\\ris...')
+#2 H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\includes\wc-deprecated-functions.php(338): wc_get_template('single-product-...', Array, '', '')
+#3 H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\content-single-product.php(155): woocommerce_get_template('single-product-...')
+#4 H:\wamp\www\rishabh\animal_food\wp-includes\template.php(724): require('H:\\wamp\\www\\ris...')
+#5 H:\wamp\www\rishabh\animal_foo in H:\wamp\www\rishabh\animal_food\wp-includes\comment.php on line 491
+
+2020-03-11T10:11:46+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\single-product-reviews.php on line 38
+
+2020-03-11T11:57:08+00:00 CRITICAL syntax error, unexpected '$product_id' (T_VARIABLE), expecting ',' or ')' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\content-single-product.php on line 172
+
+2020-03-11T12:03:15+00:00 CRITICAL Uncaught Error: Call to undefined function wp_query() in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\content-single-product.php:184
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-includes\template.php(724): require()
+#1 H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('H:\\wamp\\www\\ris...', false)
+#2 H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\templates\single-product.php(36): wc_get_template_part('content', 'single-product')
+#3 H:\wamp\www\rishabh\animal_food\wp-includes\template-loader.php(98): include('H:\\wamp\\www\\ris...')
+#4 H:\wamp\www\rishabh\animal_food\wp-blog-header.php(19): require_once('H:\\wamp\\www\\ris...')
+#5 H:\wamp\www\rishabh\animal_food\index.php(17): require('H:\\wamp\\www\\ris...')
+#6 {main}
+  thrown in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\content-single-product.php on line 184
+
+2020-03-11T12:03:28+00:00 CRITICAL Uncaught Error: Call to undefined function wp_query() in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\content-single-product.php:184
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-includes\template.php(724): require()
+#1 H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('H:\\wamp\\www\\ris...', false)
+#2 H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\templates\single-product.php(36): wc_get_template_part('content', 'single-product')
+#3 H:\wamp\www\rishabh\animal_food\wp-includes\template-loader.php(98): include('H:\\wamp\\www\\ris...')
+#4 H:\wamp\www\rishabh\animal_food\wp-blog-header.php(19): require_once('H:\\wamp\\www\\ris...')
+#5 H:\wamp\www\rishabh\animal_food\index.php(17): require('H:\\wamp\\www\\ris...')
+#6 {main}
+  thrown in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\woocommerce\content-single-product.php on line 184
+

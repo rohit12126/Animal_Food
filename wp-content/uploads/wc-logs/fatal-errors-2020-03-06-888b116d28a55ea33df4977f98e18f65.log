@@ -1,0 +1,12 @@
+2020-03-06T05:22:32+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function shortcode_atts(), 1 passed in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 236 and at least 2 expected in H:\wamp\www\rishabh\animal_food\wp-includes\shortcodes.php:551
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php(236): shortcode_atts(Array)
+#1 H:\wamp\www\rishabh\animal_food\wp-includes\shortcodes.php(325): bartag_func(Array, '', 'bartag')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 H:\wamp\www\rishabh\animal_food\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(bartag...', 'do_shortcode_ta...', '[bartag foo="fo...')
+#4 H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme\functions\builder\front.php(657): do_shortcode('[bartag foo="fo...')
+#5 H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme\functions\builder\front.php(408): mfn_print_column(Array)
+#6 H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme\page.php(25): mf in H:\wamp\www\rishabh\animal_food\wp-includes\shortcodes.php on line 551
+
+2020-03-06T07:33:06+00:00 CRITICAL syntax error, unexpected end of file in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 280
+

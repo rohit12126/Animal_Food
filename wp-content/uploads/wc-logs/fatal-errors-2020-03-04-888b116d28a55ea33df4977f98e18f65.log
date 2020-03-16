@@ -1,0 +1,63 @@
+2020-03-04T09:25:28+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_contents_count() on null in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php:14
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-settings.php(497): include()
+#1 H:\wamp\www\rishabh\animal_food\wp-config.php(90): require_once('H:\\wamp\\www\\ris...')
+#2 H:\wamp\www\rishabh\animal_food\wp-load.php(37): require_once('H:\\wamp\\www\\ris...')
+#3 H:\wamp\www\rishabh\animal_food\wp-blog-header.php(13): require_once('H:\\wamp\\www\\ris...')
+#4 H:\wamp\www\rishabh\animal_food\index.php(17): require('H:\\wamp\\www\\ris...')
+#5 {main}
+  thrown in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 14
+
+2020-03-04T09:26:13+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_contents_count() on null in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php:14
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-settings.php(497): include()
+#1 H:\wamp\www\rishabh\animal_food\wp-config.php(90): require_once('H:\\wamp\\www\\ris...')
+#2 H:\wamp\www\rishabh\animal_food\wp-load.php(37): require_once('H:\\wamp\\www\\ris...')
+#3 H:\wamp\www\rishabh\animal_food\wp-blog-header.php(13): require_once('H:\\wamp\\www\\ris...')
+#4 H:\wamp\www\rishabh\animal_food\index.php(17): require('H:\\wamp\\www\\ris...')
+#5 {main}
+  thrown in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 14
+
+2020-03-04T09:26:17+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_contents_count() on null in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php:14
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-settings.php(497): include()
+#1 H:\wamp\www\rishabh\animal_food\wp-config.php(90): require_once('H:\\wamp\\www\\ris...')
+#2 H:\wamp\www\rishabh\animal_food\wp-load.php(37): require_once('H:\\wamp\\www\\ris...')
+#3 H:\wamp\www\rishabh\animal_food\wp-admin\admin-ajax.php(22): require_once('H:\\wamp\\www\\ris...')
+#4 {main}
+  thrown in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 14
+
+2020-03-04T09:35:57+00:00 CRITICAL Uncaught Error: Call to a member function get_instance_option_key() on boolean in H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\includes\class-wc-ajax.php:2800
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-includes\class-wp-hook.php(288): WC_AJAX::shipping_zone_methods_save_changes('')
+#1 H:\wamp\www\rishabh\animal_food\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters('', Array)
+#2 H:\wamp\www\rishabh\animal_food\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 H:\wamp\www\rishabh\animal_food\wp-admin\admin-ajax.php(175): do_action('wp_ajax_woocomm...')
+#4 {main}
+  thrown in H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\includes\class-wc-ajax.php on line 2800
+
+2020-03-04T09:36:36+00:00 CRITICAL Uncaught Error: Call to a member function get_instance_option_key() on boolean in H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\includes\class-wc-ajax.php:2800
+Stack trace:
+#0 H:\wamp\www\rishabh\animal_food\wp-includes\class-wp-hook.php(288): WC_AJAX::shipping_zone_methods_save_changes('')
+#1 H:\wamp\www\rishabh\animal_food\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters('', Array)
+#2 H:\wamp\www\rishabh\animal_food\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 H:\wamp\www\rishabh\animal_food\wp-admin\admin-ajax.php(175): do_action('wp_ajax_woocomm...')
+#4 {main}
+  thrown in H:\wamp\www\rishabh\animal_food\wp-content\plugins\woocommerce\includes\class-wc-ajax.php on line 2800
+
+2020-03-04T09:45:55+00:00 CRITICAL syntax error, unexpected '$cart_weigth' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 80
+
+2020-03-04T09:46:04+00:00 CRITICAL syntax error, unexpected '$cart_weigth' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 80
+
+2020-03-04T09:46:51+00:00 CRITICAL syntax error, unexpected '$total_weigth' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 80
+
+2020-03-04T09:46:55+00:00 CRITICAL syntax error, unexpected '$total_weigth' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 80
+
+2020-03-04T11:28:59+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 155
+
+2020-03-04T11:29:03+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 155
+
+2020-03-04T11:29:05+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 155
+
+2020-03-04T11:29:53+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 333
+
