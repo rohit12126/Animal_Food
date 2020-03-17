@@ -12,7 +12,7 @@ get_header();
     }
 </style>
 <div id="Content">
-    <div class="shop-area pt-100 pb-100">
+    <div class="shop-area pt-50 pb-50">
         <div class="container">
             <div class="row flex-row-reverse">
             	<div class="col-lg-2 col-md-2 col-sm-12"></div>

@@ -87,14 +87,19 @@ jQuery(document).ready(function(){
 		}
 	}
 
-
-	jQuery(".variations_form.cart").find('input[name="quantity"]').change(function(){
+	
+	jQuery(".variations_form").find('input[name="quantity"]').change(function(){
 		inputQTY();
 	});
 	jQuery(".variations_form.cart .cart-plus-minus ").find(".dec , .inc").click(function(){
 		inputQTY();
 	});
 	
+	jQuery(".cart .cart-plus-minus").find(".dec , .inc").click(function(){
+		var qty = jQuery(this).parent().find(".cart-plus-minus-box");
+		if(qty.val() < parseInt(qty.attr("min")))
+			qty.val(parseInt(qty.attr("min")));
+	});
 
 
 	jQuery(".variations_form.cart").find('.variations select').change(function(ev){
@@ -163,6 +168,7 @@ jQuery(document).ready(function(){
 		var min = parseInt(_this.attr("min"));
 		var max = parseInt(_this.attr("max"));
 		var qty = _this.val();
+
 		if(qty <= 0){
 			_this.val('1');
 		}else if(qty > max){
@@ -173,11 +179,17 @@ jQuery(document).ready(function(){
 			jQuery(".woocommerce-cart-form").find('button[name="update_cart"]').prop("disabled", false);
 	}
 
-	jQuery(".woocommerce-cart-form").find(".quantity .cart-plus-minus-box").change(function(){
-		cart_qty_field(jQuery(this));
+
+
+	jQuery(document).on('change','.woocommerce-cart-form .quantity .cart-plus-minus-box', function(){
+	    cart_qty_field(jQuery(this));
 	});
-	jQuery(".woocommerce-cart-form .quantity").find(".dec , .inc").click(function(){
-		cart_qty_field(jQuery(this).parent().find(".cart-plus-minus-box"));
+	jQuery(document).on('click','.woocommerce-cart-form .quantity .qtybutton', function(e){
+
+	    cart_qty_field(jQuery(this).parent().find(".cart-plus-minus-box"));
 	});
+
+
+
 
 });

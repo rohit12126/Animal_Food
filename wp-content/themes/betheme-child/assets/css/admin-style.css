@@ -1,22 +1,4 @@
-/* ================ weight based rule page css =================== */
 
-.add_rule_form_container #add_new_rule{
-	background-color: #ffffff;
-	padding: 5%;
-}
-
-#add_new_rule .half-field {
-    display: inline-block;
-    width: 50%;
-    float: left;
-    margin-bottom: 15px;
-}
-#add_new_rule .half-field input[type="number"], #add_new_rule .half-field select {
-    width: 90%;
-}
-.invalid input , .invalid select {
-    border-color: red;
-}
 
 
 	/*.rule_list_container{

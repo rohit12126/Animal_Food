@@ -18,7 +18,7 @@
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
-<div class="cart-main-area pt-95">
+<div class="cart-main-area pt-15">
 	<div class="container">
 		<h3 class="page-title">Your cart items</h3>
 		 <div class="row">
@@ -66,10 +66,16 @@ do_action( 'woocommerce_before_cart' ); ?>
 											<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
 												<?php
 												//echo "<pre>";print_r($cart_item);
+												if($cart_item["variation_id"] !=0)
+													$quantity_var = '&quantity='.$cart_item["quantity"];
+												else
+													$quantity_var = '?quantity='.$cart_item["quantity"];
+
+
 												if ( ! $product_permalink ) {
 													echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
 												} else {
-													echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+													echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ).''.$quantity_var, $_product->get_name() ), $cart_item, $cart_item_key ) );
 												}
 
 												do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
@@ -174,7 +180,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					    <div class="col-lg-12">
 					        <div class="cart-shiping-update-wrapper">
 					            <div class="cart-shiping-update">
-					                <a href="#">Continue Shopping</a>
+					                <a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>">Continue Shopping</a>
 					                <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 									
 									<?php do_action( 'woocommerce_cart_actions' ); ?>

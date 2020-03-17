@@ -1,0 +1,22 @@
+2020-03-17T04:56:09+00:00 CRITICAL Cannot redeclare activate_plugin() (previously declared in H:\wamp\www\rishabh\animal_food\wp-admin\includes\plugin.php:618) in H:\wamp\www\rishabh\animal_food\wp-content\plugins\weight-bassed-shipping\functions.php on line 18
+
+2020-03-17T04:56:10+00:00 CRITICAL Cannot redeclare activate_plugin() (previously declared in H:\wamp\www\rishabh\animal_food\wp-admin\includes\plugin.php:618) in H:\wamp\www\rishabh\animal_food\wp-content\plugins\weight-bassed-shipping\functions.php on line 18
+
+2020-03-17T04:56:11+00:00 CRITICAL Cannot redeclare activate_plugin() (previously declared in H:\wamp\www\rishabh\animal_food\wp-admin\includes\plugin.php:618) in H:\wamp\www\rishabh\animal_food\wp-content\plugins\weight-bassed-shipping\functions.php on line 18
+
+2020-03-17T04:56:42+00:00 CRITICAL Cannot redeclare activate_plugin() (previously declared in H:\wamp\www\rishabh\animal_food\wp-admin\includes\plugin.php:618) in H:\wamp\www\rishabh\animal_food\wp-content\plugins\weight-bassed-shipping\functions.php on line 15
+
+2020-03-17T04:56:43+00:00 CRITICAL Cannot redeclare activate_plugin() (previously declared in H:\wamp\www\rishabh\animal_food\wp-admin\includes\plugin.php:618) in H:\wamp\www\rishabh\animal_food\wp-content\plugins\weight-bassed-shipping\functions.php on line 15
+
+2020-03-17T04:56:43+00:00 CRITICAL Cannot redeclare activate_plugin() (previously declared in H:\wamp\www\rishabh\animal_food\wp-admin\includes\plugin.php:618) in H:\wamp\www\rishabh\animal_food\wp-content\plugins\weight-bassed-shipping\functions.php on line 15
+
+2020-03-17T05:23:53+00:00 CRITICAL Cannot redeclare load_custom_wp_admin_style() (previously declared in H:\wamp\www\rishabh\animal_food\wp-content\plugins\weight-bassed-shipping\includes\eneque_manager.php:3) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 53
+
+2020-03-17T05:25:53+00:00 CRITICAL Cannot redeclare load_custom_wp_admin_style() (previously declared in H:\wamp\www\rishabh\animal_food\wp-content\plugins\weight-bassed-shipping\includes\eneque_manager.php:3) in H:\wamp\www\rishabh\animal_food\wp-content\themes\betheme-child\functions.php on line 53
+
+2020-03-17T07:22:25+00:00 CRITICAL Cannot redeclare plugin_wp_admin_style_js() (previously declared in H:\wamp\www\rishabh\animal_food\wp-content\plugins\weight-bassed-shipping\includes\eneque_manager.php:3) in H:\wamp\www\rishabh\animal_food\wp-content\plugins\custom-social-share\includes\eneque_manager.php on line 3
+
+2020-03-17T07:22:26+00:00 CRITICAL Cannot redeclare plugin_wp_admin_style_js() (previously declared in H:\wamp\www\rishabh\animal_food\wp-content\plugins\weight-bassed-shipping\includes\eneque_manager.php:3) in H:\wamp\www\rishabh\animal_food\wp-content\plugins\custom-social-share\includes\eneque_manager.php on line 3
+
+2020-03-17T07:22:26+00:00 CRITICAL Cannot redeclare plugin_wp_admin_style_js() (previously declared in H:\wamp\www\rishabh\animal_food\wp-content\plugins\weight-bassed-shipping\includes\eneque_manager.php:3) in H:\wamp\www\rishabh\animal_food\wp-content\plugins\custom-social-share\includes\eneque_manager.php on line 3
+

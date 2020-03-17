@@ -59,216 +59,7 @@ function load_custom_wp_admin_style() {
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
 
-/* ======================== shipping method ======================== */
 
-function register_weight_based_shipping_page() {
-    add_submenu_page( 'woocommerce', 'Weight Rule', 'Weight Rule', 'manage_options', 'weight-rule', 'weight_rule_page_callback' ); 
-}
-function weight_rule_page_callback() {
-    require_once('woocommerce/custom_shipping/weight_bassed_rule_template.php');
-}
-add_action('admin_menu', 'register_weight_based_shipping_page',99);
-
-
-
-
-add_action('woocommerce_shipping_init', 'weight_bassed_shipping_methode');
-function weight_bassed_shipping_methode() {
-
-    if ( ! class_exists( 'WC_Weight_bassed_Shipping_Method' ) ) {
-        class WC_Weight_bassed_Shipping_Method extends WC_Shipping_Method {
-
-            public function __construct( $instance_id = 0) {
-                $this->id = 'weight_bassed_shipping';
-                $this->instance_id = absint( $instance_id );
-                $this->domain = 'rasq';
-                $this->method_title = __( 'Weight Bassed Shipping', $this->domain );
-                $this->method_description = __( 'Shipping method to be used for add charges according to weight.', $this->domain );
-                $this->supports = array(
-                    'shipping-zones',
-                    'instance-settings',
-                    'instance-settings-modal',
-                );
-                $this->init();
-            }
-
-            ## Load the settings API
-            function init() {
-                $this->init_form_fields();
-                $this->init_settings();
-                $this->enabled = $this->get_option( 'enabled', $this->domain );
-                $this->title   = $this->get_option( 'title', $this->domain );
-                $this->info    = $this->get_option( 'info', $this->domain );
-                add_action('woocommerce_update_options_shipping_' . $this->id, array($this, 'process_admin_options'));
-             }
-
-            function init_form_fields() {
-                $this->instance_form_fields = array(
-                    'title' => array(
-                        'type'          => 'text',
-                        'title'         => __('Title', $this->domain),
-                        'description'   => __( 'Title to be displayed on site.', $this->domain ),
-                        'default'       => __( 'Weight Bassed Shipping', $this->domain ),
-                    ),
-                    
-                );
-            }
-
-
-
-            public function get_shipping_charge($pincode){
-
-                $cart_weigth = 0;
-            
-                foreach(WC()->cart->get_cart() as $cart_item) { 
-                    $product = $cart_item['data'];
-                    $qty     = $cart_item['quantity'];
-                    $pro_weight = $product->get_weight();
-                    if(empty($pro_weight) || $pro_weight == 0){
-                    	$pro_weight = 1;
-                    }
-            
-                  
-                    $cart_weigth += $qty * $pro_weight;
-                } 
-                //return $cart_weigth;
-
-                global $wpdb;
-                $custom_table_name = $wpdb->prefix."custom_shipping_rule";
-                $result = $wpdb->get_results("SELECT Cost FROM ".$custom_table_name." WHERE `Min` <= ".$cart_weigth." AND `Max` >= ".$cart_weigth." AND `Pincode` = ".$pincode."");
-                $rate = $result[0]->Cost;
-
-
-
-                return $rate;
-            }
-            
-            
-
-            public function calculate_shipping( $packages = array() ) {
-            	$rate_charge = $this->get_shipping_charge($packages["destination"]["postcode"]);
-
-            	if(empty($rate_charge)){
-					$this->add_rate( false );
-            	}else{
-	            	//$rate_charge = $total_weigth * 10;
-	                $rate = array(
-	                    'id'       => $this->id,
-	                    'label'    => $this->title,
-	                    'cost'     => $rate_charge,
-	                    'calc_tax' => 'per_item'
-	                );
-	                $this->add_rate( $rate );
-	            }
-            }
-        }
-    }
-}
-
-add_filter('woocommerce_shipping_methods', 'add_request_shipping_quote');
-function add_request_shipping_quote( $methods ) {
-    $methods['weight_bassed_shipping'] = 'WC_Weight_bassed_Shipping_Method';
-    return $methods;
-}
-
-
-
-
-/* ============================== custom shipping method ajax and functions ====================== */
-global $wpdb;
-$custom_table_name = $wpdb->prefix."custom_shipping_rule";
-
-$result = $wpdb->get_results("SELECT ID FROM ".$custom_table_name);
-
-if(empty($result)) {
-
-    $query = "CREATE TABLE ".$custom_table_name." (
-              ID int(11) AUTO_INCREMENT,
-              Zone varchar(50) NOT NULL,
-              Pincode varchar(50) NOT NULL,
-              Title varchar(50) NOT NULL,
-              Cost varchar(50) NOT NULL,
-              Min varchar(50) NOT NULL,
-              Max varchar(50) NOT NULL,
-              Created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-              PRIMARY KEY  (ID)
-              )";
-    $result = $wpdb->get_results($query);
-}
-
-
-
-function get_pincode_by_zone() {
-	global $wpdb;
-	$zone_id = $_POST["id"];
-	$data = $wpdb->get_results( "SELECT location_code FROM `".$wpdb->prefix."woocommerce_shipping_zone_locations` WHERE `zone_id` = '".$zone_id."' AND `location_type` = 'postcode'");
-	/*echo "<pre>";
-	print_r($data);*/
-	$pincode_options = '<option value="-1">Select Pincode</option>';
-	foreach ($data as $key => $value) {
-		$pincode_options .= '<option value="'.$value->location_code.'">'.$value->location_code.'</option>';		
-	}
-	echo json_encode(  array('option' =>  $pincode_options ) );
-	die();
-}
-add_action('wp_ajax_get_pincode_by_zone', 'get_pincode_by_zone' ); 
-add_action('wp_ajax_nopriv_get_pincode_by_zone', 'get_pincode_by_zone' ); 
-
-
-
-function add_new_shipping_rule(){
-	
-	$zone = get_zone_name($_POST["data"][1]["value"]);
-	$pincode = $_POST["data"][2]["value"];
-	$title = $_POST["data"][0]["value"];
-	$cost = $_POST["data"][3]["value"];
-	$min = $_POST["data"][4]["value"];
-	$max = $_POST["data"][5]["value"];
-
-	global $wpdb;
-	$data = $wpdb->get_results( "INSERT INTO `".$wpdb->prefix."custom_shipping_rule`(`Zone`, `Pincode`, `Title`, `Cost`, `Min`, `Max`) VALUES ('".$zone."' , '".$pincode."' , '".$title."' , '".$cost."' , '".$min."' , '".$max."')" );
-
-	echo json_encode(  array('status' =>  "1" ) );
-	die();
-}
-add_action('wp_ajax_add_new_shipping_rule', 'add_new_shipping_rule' ); 
-add_action('wp_ajax_nopriv_add_new_shipping_rule', 'add_new_shipping_rule' ); 
-
-
-
-function delete_shipping_rule(){
-	//echo "<pre>";	
-	$ids = $_POST["data"];
-	for ($i=0; $i < count($ids); $i++) { 
-		$condition .= "`ID` = ".$ids[$i];
-		if($i != count($ids)-1){
-			$condition .= " OR ";
-		}
-	}
-
-	global $wpdb;
-	$result = $wpdb->get_results( "DELETE FROM `".$wpdb->prefix."custom_shipping_rule` WHERE ".$condition);
-	echo json_encode(  array('status' =>  "1" ) );
-	die();
-}
-add_action('wp_ajax_delete_shipping_rule', 'delete_shipping_rule' ); 
-add_action('wp_ajax_nopriv_delete_shipping_rule', 'delete_shipping_rule' ); 
-
-
-
-
-function get_zone_name($zone_id){
-	
-	global $wpdb;
-	$zone_name = $wpdb->get_results( "SELECT zone_name FROM `".$wpdb->prefix."woocommerce_shipping_zones` WHERE `zone_id` = '".$zone_id."'");
-	return $zone_name[0]->zone_name;
-}
-
-/*global $wpdb;
-$custom_table_name = $wpdb->prefix."custom_shipping_rule";
-$result = $wpdb->get_results("SELECT Cost FROM `wp_custom_shipping_rule` WHERE `Min` <= 10 AND `Max` >= 10 AND `Pincode` = 452001");
-echo "<pre>";
-print_r($result);*/
 
 
 
@@ -539,21 +330,6 @@ add_shortcode( 'testimonial_slide_view', 'testimonial_custom_slide_view' );
 
 
 
-add_action( 'woocommerce_after_add_to_cart_button', 'add_content_after_addtocart_button_func' );
-function add_content_after_addtocart_button_func() {
-
-        // Echo content.
-        echo '<div class="social-icon mt-30">
-                                <ul>
-                                    <li><a href="#"><i class="icon-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="icon-social-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="icon-social-skype"></i></a></li>
-                                    <li><a href="#"><i class="icon-social-dribbble"></i></a></li>
-                                </ul>
-                            </div>';
-
-}
 
 
 
@@ -644,5 +420,12 @@ function add_weight_attr(){
 }
 add_action('wp_ajax_add_weight_attr', 'add_weight_attr' ); 
 add_action('wp_ajax_nopriv_add_weight_attr', 'add_weight_attr' ); 
+
+
+
+/* ==================== social share ============================== */
+
+
+
 ?>
 

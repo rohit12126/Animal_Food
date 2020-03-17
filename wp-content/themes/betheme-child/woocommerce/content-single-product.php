@@ -90,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	}
 ?>
 
-<div class="shop-area pt-95 pb-100" id="product-<?php the_ID(); ?>">
+<div class="shop-area pt-50 pb-100" id="product-<?php the_ID(); ?>">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6">
@@ -184,42 +184,44 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'order' => 'DESC' );
 
 				$loop = new WP_Query( $args );
-				while ( $loop->have_posts() ) : $loop->the_post();
-					global $product;
-					if (has_post_thumbnail( $loop->post->ID ))
-					$image = get_the_post_thumbnail($loop->post->ID, 'shop_catalog');
-					else
-					$image = '<img src="'.woocommerce_placeholder_img_src().'" alt="My Image Placeholder" />';
-					if( $product->is_type( 'simple' ) )
-						$actions = '<a title="Quick View" data-toggle="" data-target="" href="'.get_permalink( $product->ID ).'"><i class="ti-plus"></i></a>
-					<a title="Add To Cart" href="?add-to-cart='.get_the_ID().'" data-quantity="1" data-product_id="'.get_the_ID().'" class="add_to_cart_button ajax_add_to_cart product_type_simple"><i class="ti-shopping-cart"></i></a>';
-					else
-						$actions = '<a title="Quick View" data-toggle="" data-target="" href="'.get_permalink( $product->ID ).'"><i class="ti-plus"></i></a>';
+				if($loop->have_posts()){
+					while ( $loop->have_posts() ) : $loop->the_post();
+						global $product;
+						if (has_post_thumbnail( $loop->post->ID ))
+						$image = get_the_post_thumbnail($loop->post->ID, 'shop_catalog');
+						else
+						$image = '<img src="'.woocommerce_placeholder_img_src().'" alt="My Image Placeholder" />';
+						if( $product->is_type( 'simple' ) )
+							$actions = '<a title="Quick View" data-toggle="" data-target="" href="'.get_permalink( $product->ID ).'"><i class="ti-plus"></i></a>
+						<a title="Add To Cart" href="?add-to-cart='.get_the_ID().'" data-quantity="1" data-product_id="'.get_the_ID().'" class="add_to_cart_button ajax_add_to_cart product_type_simple"><i class="ti-shopping-cart"></i></a>';
+						else
+							$actions = '<a title="Quick View" data-toggle="" data-target="" href="'.get_permalink( $product->ID ).'"><i class="ti-plus"></i></a>';
         	?>
 
 
 
-            <div class="product-wrapper">
-                <div class="product-img">
-                    <a href="<?php echo get_permalink( $product->ID ); ?>">
-                        <?php echo $image; ?>
-                    </a>
-                    <div class="product-action">
-                        <?php echo $actions; ?>
-                    </div>
-                    <div class="product-action-wishlist">
-                        <?php echo do_shortcode("[yith_wcwl_add_to_wishlist]"); ?>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <h4><a href="<?php echo get_permalink( $product->ID ); ?>"><?php echo get_the_title( $product->ID ); ?></a></h4>
-                    <div class="product-price">
-                        <?php echo $product->get_price_html(); ?>
-                    </div>
-                </div>
-            </div>
-			<?php
-			endwhile;
+		            <div class="product-wrapper">
+		                <div class="product-img">
+		                    <a href="<?php echo get_permalink( $product->ID ); ?>">
+		                        <?php echo $image; ?>
+		                    </a>
+		                    <div class="product-action">
+		                        <?php echo $actions; ?>
+		                    </div>
+		                    <div class="product-action-wishlist">
+		                        <?php echo do_shortcode("[yith_wcwl_add_to_wishlist]"); ?>
+		                    </div>
+		                </div>
+		                <div class="product-content">
+		                    <h4><a href="<?php echo get_permalink( $product->ID ); ?>"><?php echo get_the_title( $product->ID ); ?></a></h4>
+		                    <div class="product-price">
+		                        <?php echo $product->get_price_html(); ?>
+		                    </div>
+		                </div>
+		            </div>
+					<?php
+					endwhile;
+				}
 			wp_reset_query(); 
 
 			?>
